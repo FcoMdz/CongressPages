@@ -1,0 +1,89 @@
+<div class="container" *ngIf=" usuario && (usuario.enccompras || usuario.administrador); else iniciarSesion">
+    <div class="row text-center">
+      <div class="col-12">
+        <h2>Registrar Taller</h2>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-xl-8 col-xxl-6 mb-3 mb-lg-0">
+        <div class="card">
+          <div class="card-header">
+            Ingrese los siguientes datos
+          </div>
+  
+          <form action="" [formGroup]="formUser">
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <div class="input-group">
+                <label class="input-group-text" for="autor">Talleristas</label>
+                <span style="width: 83.5%;">
+                  <p-multiSelect inputId="options" styleClass="w-100" formControlName="alumnos" [options]="alumnos"
+                    optionLabel="nombre" [filter]="true" filterBy="nombre" [showClear]="true"
+                    placeholder="Seleccione los talleristas"></p-multiSelect>
+                </span>
+              </div>
+                </li>
+  
+                <li class="list-group-item">
+                  <div class="input-group">
+                    <label class="input-group-text" for="precio" id="basic-addon1">Nombre del taller</label>
+                    <input id="precio" type="text" class="form-control" placeholder="..." aria-label="Username"
+                      aria-describedby="basic-addon1" formControlName="nombreTaller" />
+                  </div>
+                 <!-- <div class="alert alert-danger mt-2"
+                    [hidden]="formUser.get('precio')?.valid || formUser.get('precio')?.pristine">
+                    <span *ngIf="formUser.get('precio')?.errors?.['pattern']">
+                      El precio puede variar desde $0.00 hasta $99999.99 (no olvide agregar los centavos)
+                    </span>
+                  </div>-->
+                </li>
+                <li class="list-group-item">
+                  <div class="input-group">
+                    <label for="impuesto" class="input-group-text" id="basic-addon1">Descripcion del proyecto</label>
+                    <input id="impuesto" type="textArea" class="form-control" placeholder="..." aria-label="Username"
+                      aria-describedby="basic-addon1" formControlName="descTaller" />
+                  </div>
+                 <!-- <div class="alert alert-danger mt-2"
+                    [hidden]="formUser.get('impuesto')?.valid || formUser.get('impuesto')?.pristine">
+                    <span *ngIf="formUser.get('impuesto')?.errors?.['pattern']">
+                      El impuesto es un porcentaje que va del 0% al 99%
+                    </span>
+                  </div>-->
+                </li>
+                <li class="list-group-item">
+                  <div class="input-group">
+                    <label for="impuesto" class="input-group-text" id="basic-addon1">Cupo</label>
+                    <input id="impuesto" type="textArea" class="form-control" placeholder="..." aria-label="Username"
+                      aria-describedby="basic-addon1" formControlName="capacidad" />
+                  </div>
+                 <!-- <div class="alert alert-danger mt-2"
+                    [hidden]="formUser.get('impuesto')?.valid || formUser.get('impuesto')?.pristine">
+                    <span *ngIf="formUser.get('impuesto')?.errors?.['pattern']">
+                      El impuesto es un porcentaje que va del 0% al 99%
+                    </span>
+                  </div>-->
+                </li>
+                
+              </ul>
+  
+            </div>
+            <div class="card-footer text-center">
+              <div class="row">
+                <div class="col-12"><button class="btn btn-outline-primary" style="width: 100%;"
+                    (click)="agregarTaller()" [disabled]="formUser.invalid"><i class="fa-solid fa-circle-plus"></i>
+                    Agregar <i class="fa-solid fa-circle-plus"></i></button></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+  <ng-template #iniciarSesion>
+    <div class="container my-4 text-center">
+      <h1>Inicie sesión para acceder a esta página</h1>
+    </div>
+  </ng-template>
