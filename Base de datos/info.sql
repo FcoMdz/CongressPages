@@ -41,7 +41,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `usuario` (
   `id` varchar(20) NOT NULL,
-  `usuario` varchar(20) NOT NULL,
+  `usu ario` varchar(20) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `contrasena` varchar(255) NOT NULL,
   `tallerista` tinyint(1) NOT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`usuario`, `nombre`, `contrasena`, `tallerista`, `coordinador`, `administrador`) VALUES
-('Admin', 'Administrador General', '123456789', 1, 1, 1);
+('Admin', 'Administrador General', '0 ', 1, 1, 1);
 
 
 --

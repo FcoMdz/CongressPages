@@ -82,40 +82,7 @@ export class RegTallerComponent implements OnInit {
 
  
 }
-interface datosProducto {
-  producto: producto;
-  autores: any[];
-  editoriales: any[];
-}
-interface producto {
-  success: boolean;
-  ISBN: string;
-  nombre: string;
-  precio: number;
-  existencias: number;
-  impuesto: number;
-}
 
-interface ventaCte {
-  Id_cte: string;
-  nombre_cte: string;
-}
-class venderProducto {
-  ISBN: string = '';
-  nombre: string = '';
-  precio: string = '';
-  cantidad: string = '';
-  impuesto: string = '';
-  constructor(venderProducto?: venderProducto) {
-    if (venderProducto) {
-      this.ISBN = venderProducto.ISBN;
-      this.nombre = venderProducto.nombre;
-      this.precio = venderProducto.precio;
-      this.cantidad = venderProducto.cantidad;
-      this.impuesto = venderProducto.impuesto;
-    }
-  }
-}
 
 interface taller {
   nombre: string;
